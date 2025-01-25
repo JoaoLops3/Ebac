@@ -1,0 +1,96 @@
+GIT: 
+
+cd c:/git
+
+Powershell:
+Comandos: 
+
+(dir ou ls(mac))- (lista pastas);
+(cd ..)- (sair da pasta atual);
+cd .\joaog\ - cd . \pasta\ (entrar em alguma pasta);
+cd .\joaog\Downloads\ ( entrar na pasta direto);
+mkdir pasta_exemplo ( criar pasta);
+echo "ola" > arquivo.txt(criar arquivo);
+cat .\arquivo.txt (ver conteudo dentro do arquivo);
+rm -r .\arquivo.txt (apagar arquivo);
+rm -r .\pasta_exemplo\ (apagar pasta);
+
+
+
+configuração basica git: 
+
+git config --global user.name "joaog"
+git config --global user.email "joaogabriellops2353@gmail.com"
+
+inicializar um repositorio git (estado e versoes do projeto):
+passo a passo:
+
+cd git
+git init .	(inicializar o git);
+echo "ola mundo" > arquivo.txt
+git status    (ve as mudanças do projeto);
+git add .\arquivo.txt (adicionar arquivo no git);
+git status
+
+
+remover o arquivo:
+
+git rm --cached .\arquivo.txt
+
+
+add todos de uma vez:
+git add .
+
+
+salvando alterações:
+
+para salvar o texto usamos: Ctrl + O
+para sair do editor: Ctrl + X
+
+Podemos salvar as alteração, criar um commit, sem ter que acessar esse editor, fazemos isso através do comando: 
+
+git commit-m "minha mensagem"
+
+
+padrões para nomear commits
+
+chore:git commit-m "chore: removendo arquivo.txt"
+fix:git commit-m "fix: correção no cálculo de médias"
+feat:git commit-m "feat: inclusão de função para calcular mediana"
+docs:git commit-m "atualizando o changelod.md"
+
+obs: Changelog (é um arquivo onde registramos todas as mudanças que aconteceram em um projeto ao decorrer do tempo. );
+
+
+Gitlog: 
+Para visualizar o histórico de commits, usamos o comando: gitlog
+
+
+O registro de um commitsé composto por: 
+Commit: identificador único do commit 
+Author: autor do commit 
+Date: data em que o commitfoi feito 
+
+obs: Mensagem informado no gitcommit
+
+
+Gitlog –variações 
+Para visualizar os últimos dois commits: 
+
+gitlog –n 2* (ou outro número)
+
+Para visualizar uma versão resumida do registro de commits: 
+gitlog --oneline
+
+Podemos visualizar o registro de uma forma mais detalhada solicitando o conteúdo da alteração, através do comando: 
+gitlog --stat
+
+É possível combinar as variações, solicitamos o conteúdo de dois registros com apenas o identificador do commit: 
+gitlog --stat–n 2 --oneline
+
+
+
+
+
+
+

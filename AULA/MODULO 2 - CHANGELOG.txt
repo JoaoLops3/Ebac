@@ -1,0 +1,96 @@
+Como fazer um bom changelog?
+
+Princípios fundamentais:
+
+-Changelogs são para humanos, não máquinas.
+
+-Deve haver uma entrada para cada versão.
+
+-Alterações do mesmo tipo devem ser agrupadas.
+
+-Versões e seções devem ser vinculáveis (com links).
+
+-A versão mais recente vem em primeiro lugar.
+
+-A data de lançamento de cada versão é exibida.
+
+-Mencione se você segue o versionamento semântico.
+
+
+Tipos de mudanças:
+
+-Added/Adicionado para novos recursos.
+
+-Changed/Modificado para alterações em recursos existentes.
+
+-Deprecated/Obsoleto para recursos que serão removidos nas próximas versões.
+
+-Removed/Removido para recursos removidos nesta versão.
+
+-Fixed/Corrigido para qualquer correção de bug.
+
+-Security/Segurança em caso de vulnerabilidades.
+
+
+Como eu posso minimizar o esforço exigido para manter um changelog?
+
+Mantenha sempre uma seção Unreleased/Não publicado no topo para manter o controle das novas mudanças.
+
+Isso serve a dois propósitos:
+
+-As pessoas podem ver quais mudanças elas podem esperar em publicações futuras.
+
+-No momento da publicação, você apenas tem de mudar a seção Unreleased/Não publicado para o número de versão e adicionar uma nova seção Unreleased/Não publicado no topo.
+
+
+
+Os changelogs podem ser ruins?
+Sim. Aqui estão algumas maneiras pelas quais eles podem ser inúteis.
+
+
+Usar um registro de alterações automático:
+Usar um registro de alterações automático é uma má ideia: eles estão cheios de bagunça. Coisas como solicitação de mesclagem, envio com títulos estranhos, alterações de documentação, etc.
+
+O propósito de um commit é documentar a etapa na evolução do código fonte. Alguns projetos limpam os commits, outros não.
+
+O propósito de uma entrada de changelog é documentar as diferenças notáveis, muitas vezes de múltiplos commits, para comunicar de forma clara os usuários.
+
+
+
+
+Ignorando depreciações:
+Quando pessoas atualizam de uma versão para outra, deve ficar muitíssimo claro quando algo vai quebrar. Deve ser possível atualizar para uma versão com depreciações listadas, remova o que é obsoleto, depois atualize para a versão onde as depreciações se tornam remoções.
+
+Se você não fizer mais nada, liste no seu changelog as depreciações, remoções e quaisquer mudanças que gerem falhas.
+
+
+Datas confusas:
+-Os formatos regionais de data variam em todo o mundo e muitas vezes é difícil encontrar um formato de data amigável que seja intuitivo para todos. 
+A vantagem das datas formatadas como 2017-07-17 é que elas seguem a ordem da maior para a menor unidade de tempo: ano, mês e dia. Este formato também não se confunde de maneira ambígua com outros formatos de data, ao contrário de alguns formatos regionais que alteram a posição dos números do mês e dia. 
+Esses motivos, e o fato de ser um formato de data suportado pela norma ISO são as razões para ele ser o formato de data recomendado para as entradas do changelog.
+
+Variações na visualização de commits:
+-Para visualizar os últimos dois commits git log –n 2*(ou outro número);
+-Para visualizar uma versão resumida do registro de commits git log --oneline;
+-Podemos visualizar o registro de uma forma mais detalhada solicitando o conteúdo da alteração, através do comando: git log --stat
+-É possível combinar as variações, solicitamos o conteúdo de dois registros com apenas o identificador do commit: git log --stat–n 2 --oneline
+-Desfazer alterações Podemos desfazer alterações em arquivos que ainda não foram adicionados ao stage, usando o comando: git checkout meu_arquivo
+-Navegar entre commits Com o Git podemos viajar no tempo, para o passado, podemos voltar o conteúdo de um repositório para o conteúdo de um determinado commit com o seguinte comando: git checkout COMMIT_ID
+-Reverter commits Uma reversão significa que outro commit será criado desfazendo a alteração, se incluirmos um arquivo no commit que queremos reverter, outro commit será criado removendo este arquivo, isso é feito através do comando: git revert HEAD COMMIT_ID
+
+
+
+Listar as branches: 
+-Para visualizar todas as branches que fazem parte do repositório, execute o comando: gitbranch
+-Para criar uma branch, executamos o comando: git branch nova_branch ,Com esse comando será criada uma nova ramificação do projeto a partir do estado da branch atual, com uma variação do comando podemos indicar uma branch de referência para a sua criação: git branch nova_branch branch_referencia
+
+nomenclatura de branches:
+-hotfix/nome_do_bug: usado para correções rápidas. Exemplo: o botão de adicionar ao carrinho não funciona, a correção do bugé feita numa branch hotfix.
+-bugfix/nome_do_bug: correção de um bugque não é um impeditivo ao usuário, não compromete um fluxo do site.
+-feature/nome_da_funcionalidade: a adição de uma funcionalidade será contida nessa nova branch, até que ela esteja desenvolvida e validada. Exemplo feature/add_to_favorites.
+
+Navegar entre branches:
+-Para trocar de branch usamos o comando: Git checkout nome_branch Podemos combinar a criação com a troca de branch com o comando: Git checkout –b nome_branch ,A branch nova será criada e nosso repositório estará baseado nela.
+
+Deletar uma branch:
+-Para deletar uma branch, executamos o comando git branch –D nome_branch

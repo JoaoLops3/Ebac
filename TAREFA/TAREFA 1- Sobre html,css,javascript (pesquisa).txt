@@ -1,0 +1,9 @@
+HTML: linguagem de marcação para criar estruturas de um site
+CSS: É a apresentação visual do site(estética)
+JavaScript: Linguagem de Programação usada para fazer páginas interativas e dinamica
+
+
+importância:
+HTML: Conseguimos organizar tudo de forma clara e estruturada definindo cabeçalhos, parágrafos, lista, etc.
+CSS: Controle do visual (aparência do texto, imagens, fundo, etc).
+JavaScript: permite que deixei o site com dinasmimo e varios efeitos.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomurlários</title>
+</head>
+<body>
+    <h1>Formulários</h1>
+    <form>  <!-- Formulário -->
+        <input type="text" placeholder="Seu Nome"> <!-- Caixa para colocar seu nome, e texto dentro da caixa--> <!-- Placeholder: O atributo placeholder é usado para fornecer uma dica ou instrução no campo de entrada que descreve o tipo de informação que se espera que o usuário insira.-->
+        <br/>
+        <label for="e-mail">Seu e-mail</label>  <!-- Label para identificar o campo de e-mail, mas fica fora da caixa,  e o for é para identificar o campo.-->
+        <input id="e-mail" type="e-mail">  <!-- Caixa para colocar seu e-mail --> <!-- id para  identificar o campo que é  referenciado pelo label -->
+        <input type="tel" placeholder="Seu telefone">
+        <br>
+        <input type="number" max="10" min="2" step="2">   <!-- Caixa para colocar um número -->  <!-- max e min para limitar o valor -->   <!-- step para definir o valor que será incrementado -->
+        <br>
+        <input type="file">   <!-- Caixa para carregar um arquivo -->
+        <br>
+        <input type="color">   <!-- Caixa para escolher uma cor -->
+        <br>
+        <input type="checkbox" id="checkbox">  <label for="checkbox ">Aceito meus termos</label>   <!-- Caixa para escolher se aceita os termos -->   <!-- id para identificar o campo que é referenciado pelo label -->   <!-- label para identificar o campo de checkbox --> 
+        <br>
+            Qual sua cor favorita?
+            <p>
+                <input type="radio" name="cor-favorita" id="cor-Vermelha"> <label for="cor-Vermelha">Vermelha</label>   <!-- Caixa para escolher uma cor --> <!-- Name para identificar  o campo que é referenciado pelo label -->   <!-- id para identificar o campo que é referente a cor -->
+                <input type="radio" name="cor-favorita" id="cor-verde"> <label for="cor-verde">Verde</label>
+                <input type="radio" name="cor-favorita" id="cor-Azul"> <label for="cor-Azul">Azul</label>
+            </p>
+
+    </form>
+</body>
+</html>
